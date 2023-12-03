@@ -7,7 +7,7 @@ An example how to classify different HTTP request.
   
   b) python3 main.py
 
-### Your server will be available here: ip=127.0.0.1, port=8127.
+### App will be available here: ip=127.0.0.1, port=8127.
 
 To test fastapi app for classification task >> Type next code in your terminal:
 
@@ -24,7 +24,43 @@ To test fastapi app for classification task >> Type next code in your terminal:
           }
         ]'
 
+To check that app is available localy:
+
+    curl -X 'GET' 'http://127.0.0.1:8127/' 
+
+
 
 ## 2. If you running with docker.
-  ...
-  
+    a) sudo docker build -t classification_http:baseline .
+    b) sudo docker run -d --name test -p 8127:80 classification_http:baseline
+
+### App will be available here: ip=0.0.0.0, port=8127
+To test fastapi in docker container you have to use next curl example:
+
+
+    curl -X 'POST' 'http://0.0.0.0:8127/predict' -H 'accept: application/json' -H 'Content-Type: application/json' -d '[
+          {
+            "CLIENT_IP": "188.138.92.55",
+            "EVENT_ID": "AVdhXFgVq1Ppo9zF5Fxu",
+            "CLIENT_USERAGENT": "Mozilla/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0",
+            "REQUEST_SIZE": 166,
+            "RESPONSE_CODE": 404,
+            "MATCHED_VARIABLE_SRC": "REQUEST_URI",
+            "MATCHED_VARIABLE_NAME": "url",
+            "MATCHED_VARIABLE_VALUE": "//tmp/20160925122692indo.php.vob"
+          },
+          {
+            "CLIENT_IP": "127.0.0.1",
+            "EVENT_ID": "CustomEVENTID001",
+            "CLIENT_USERAGENT": "select user_name from table",
+            "REQUEST_SIZE": 2000,
+            "RESPONSE_CODE": 200,
+            "MATCHED_VARIABLE_SRC": "REQUEST_GET_ARGS",
+            "MATCHED_VARIABLE_NAME": "REQUEST_GET_ARGS._",
+            "MATCHED_VARIABLE_VALUE": "Aleksandr Samofalov"
+          }
+        ]'
+
+To check that app is available inside container:
+
+    curl -X 'GET' 'http://0.0.0.0:8127/' 
