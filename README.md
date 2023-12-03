@@ -2,10 +2,13 @@
 An example how to classify different HTTP request.
 
 ## 1. If you running main.py localy.
+a) Go to app directory.
 
-  a) cd ./app
+    cd ./app
   
-  b) python3 main.py
+b) Run via python3 file main.py where all configs are defined.
+
+    python3 main.py
 
 ### App will be available here: ip=127.0.0.1, port=8127.
 
@@ -31,9 +34,14 @@ To check that app is available localy:
 
 
 ## 2. If you running with docker.
-    a) sudo docker build -t classification_http:baseline .
-    b) sudo docker run -d --name test -p 8127:80 classification_http:baseline
+a) Create application image.
+    
+    sudo docker build -t classification_http:baseline .
 
+b) Run the image 
+
+    sudo docker run -d --name test -p 8127:80 classification_http:baseline
+    
 ### App will be available here: ip=0.0.0.0, port=8127
 To test fastapi in docker container you have to use next curl example:
 
@@ -61,6 +69,12 @@ To test fastapi in docker container you have to use next curl example:
           }
         ]'
 
+![image](https://github.com/GishB/PositiveTechnologiesTest/assets/90556084/bae8c00d-e82b-4a5e-94e8-8d5c23233f63)
+
+
 To check that app is available inside container:
 
     curl -X 'GET' 'http://0.0.0.0:8127/' 
+
+![image](https://github.com/GishB/PositiveTechnologiesTest/assets/90556084/249ae5f7-bd6d-40d0-ac50-b339bf0ef786)
+
