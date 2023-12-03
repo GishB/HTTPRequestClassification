@@ -2,3 +2,4 @@
 /venv
 /experiments/.ipynb_checkpoints
 /experiments/catboost_info
+.idea
