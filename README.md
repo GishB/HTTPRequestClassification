@@ -18,9 +18,23 @@ For CatBoostClassifier over 50 classes results show over 93% accuracy.
 
 ![image](https://github.com/GishB/PositiveTechnologiesTest/assets/90556084/413cb47e-34b2-4620-a578-70693fd9c3ce)
 
-For custom MLPAutoEncoder result shows less ~0.01 MSE for enoding-decoding pipline after 100 epochs.
+For custom MLPAutoEncoder result shows less ~0.01 MSE for enoding-decoding features after 100 epochs.
 
 ![image](https://github.com/GishB/PositiveTechnologiesTest/assets/90556084/5b23ac87-9951-498c-a001-810fc6b10509)
+
+
+## There is any logical in classification labels?
+It seems that OPTICS setup labels quite well.
+
+For example class 27 for bot HTTP request:
+
+![image](https://github.com/GishB/PositiveTechnologiesTest/assets/90556084/cfbb84c6-bd86-4390-94f9-c2881b3bd758)
+
+
+For example class 19 which seems to be a danger HTTP request.
+
+![image](https://github.com/GishB/PositiveTechnologiesTest/assets/90556084/600430d4-3f43-458d-aa20-d1a44daba629)
+
 
 
 
