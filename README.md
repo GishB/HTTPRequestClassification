@@ -1,5 +1,28 @@
 # PositiveTechnologiesTest
 An example how to classify different HTTP request.
+Main idea here is to get features from HTTP request and make prediction.
+
+## How it works?
+1. Extract features from raw data
+2. Compress the features to an representation with shape (10,)
+3. Make classification based the compressed data.
+4. Send results back in json format like [{"EVENT_ID":"Ax001", "LABEL_PRED": 1}]
+
+## What models are used for this results?
+For raw data extraction task has been used custom class in utils dir. To compress data has been used custom MLPAutoEncoder (reduce shape from 42 to 10 values). To set up initial labels has been used OPTICS model from scikit-learn. After that all data has been trained with CatBoostClassifier.
+
+## What results models have?
+Here we have about 50 classes of HTTP request. From -1 to 48.
+
+For CatBoostClassifier over 50 classes results show over 93% accuracy.
+
+![image](https://github.com/GishB/PositiveTechnologiesTest/assets/90556084/413cb47e-34b2-4620-a578-70693fd9c3ce)
+
+For custom MLPAutoEncoder result shows less ~0.01 MSE for enoding-decoding pipline after 100 epochs.
+
+![image](https://github.com/GishB/PositiveTechnologiesTest/assets/90556084/5b23ac87-9951-498c-a001-810fc6b10509)
+
+
 
 ## 1. If you running main.py localy.
 a) Go to app directory.
