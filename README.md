@@ -1,6 +1,11 @@
-# PositiveTechnologiesTest
-An example how to classify different HTTP request.
-Main idea here is to get features from HTTP request and make prediction.
+# HTTP Request Classification
+- This project has been created as a result of test for Machine Learning engineer position at "JSC Positive Technologies".
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Here you see an example how you can classify different HTTP requests.
+
+In short main idea is to get features from HTTP requests then transform it via en encoder and predict class of an HTTP request via simple Decision Tree.
 
 ## How it works?
 1. Extract features from raw data
