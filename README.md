@@ -1,5 +1,5 @@
 # HTTP Request Classification
-- This project has been created as a result of test for Machine Learning engineer position at "JSC Positive Technologies".
+- This project has been created as a result of test for Machine Learning engineer position at "Secret".
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
